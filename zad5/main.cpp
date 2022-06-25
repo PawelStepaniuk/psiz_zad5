@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #pragma warning(disable : 4996)
+// Kolory RGB
 struct kolor
 {
     char R;
@@ -12,6 +13,7 @@ struct kolor
     char B;
 } kolor;
 
+// Naglowek, wymiary obrazu
 struct naglowek
 {
     int Size;
@@ -27,6 +29,7 @@ struct naglowek
     int CImportant;
 } zdjecie;
 
+//Plik
 struct NaglowekPlik
 {
     short fType;
@@ -41,7 +44,7 @@ int main(int arc, char* argv[]) {
     FILE* f = fopen(argv[], "rb");
     if (f == nullptr) { std::cout << "Brak pliku\n\n"; }
     else { std::cout << "Plik otwarty\n\n"; }
-
+    //Wyswietlanie informacji o pliku
     std::cout << "Informacje o pliku:\n";
     fread(&Plik.fType, sizeof(Plik.fType), 1, f);
     std::cout << "Typ: " << Plik.fType << "\n";
